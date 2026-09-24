@@ -34,30 +34,7 @@
 
 Хаб працює з пристроями через `IObserver`, тому йому не потрібно знати конкретні типи підписників. Це зменшує зв'язаність класів. У прикладі підписниками є об'єкти, створені в `main()`, а `SensorHub` зберігає на них невласницькі вказівники; об'єкти мають жити довше за час підписки.
 
-## Компіляція та запуск
 
-Потрібен компілятор із підтримкою C++17, наприклад `g++`:
-
-```bash
-g++ -std=c++17 -Wall -Wextra -pedantic src/main.cpp -o observer
-./observer
-```
-
-У Windows PowerShell:
-
-```powershell
-g++ -std=c++17 -Wall -Wextra -pedantic src/main.cpp -o observer.exe
-.\observer.exe
-```
-
-Командою компілятора MSVC:
-
-```bat
-cl /nologo /std:c++20 /utf-8 /EHsc src\main.cpp /Fe:observer.exe
-observer.exe
-```
-
-У Windows-програмі консоль налаштовується на UTF-8, щоб українські повідомлення відображалися правильно. У Visual Studio вихідний файл збережено в UTF-8; якщо переносите код у файл проєкту, виберіть **File → Save As → Save with Encoding → UTF-8**. За потреби також увімкніть `/utf-8` у властивостях проєкту: **C/C++ → Command Line → Additional Options**.
 
 ## Висновок
 
